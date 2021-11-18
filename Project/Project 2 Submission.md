@@ -1,23 +1,7 @@
 
-# ANSYS DOE and Design Optimization 
+# Project 2
 John Atkins
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [A Running Example](#example)
-    1.  [Description of the brake design problem](#brake)
-    2.  [Static structural setup](#structural)
-    3.  [Modal setup](#modal)
-    4.  [Transient thermal setup](#thermal)
-    5.  [Transfering geometry and model across analysis modules](#transfer)
-    6.  [Define input parameters](#input)
-3. [Background Knowledge](#background)
-4. [Design of Experiments](#doe)
-5. [Sensitivity Analysis](#sensitivity)
-6. [Optimization](#optimization)
-7. [Checklist](#checklist)
-
-***
 
 # Introduction
 
@@ -40,7 +24,7 @@ The computer used to run this simulation was not the most powerful meaning it wa
 
 We can formally define the multi-objective optimization problem as 
 
-<img src="/Project/img/math_formal.PNG" alt="math" style="height: 400px;"/> 
+<img src="/Project/img/math_formal.PNG" alt="math" style="height: 100px;"/> 
 
 Where
 * f_i(x) are the different objective functions that correspond to maximum stress, natural frequency (here it was made negative to change maximization problem into minimization), and maximum temperature. These functions are not closed form and the result of the ANSYS simulation.
@@ -58,13 +42,13 @@ The objective functions f_i() do not have closed form representations and theref
 * Stress
 
     It follows that reducing the brake's outer and inner diameters can reduce the area of contact between the brake pad and the drum. Naturally reducing the area of an applied pressure while holding other parameters constant would reduce the net force from a constant applied pressure on the drum and therefore reduce the maximum stress from the brakes. Note that reducing this applied force from the brake pads could negativelly affect driving performance because it would make it more difficult for the car to stop. Centerfugal sources of stress would suggest increasing the outer diameter would increase the maximum stress but these terms are likely small compared to the braking forces. 
-    <img src="/Project/img/math_pressure.PNG" alt="math" style="height: 400px;"/> 
+    <img src="/Project/img/math_pressure.PNG" alt="math" style="height: 100px;"/> 
 
 
 * Natural Frequency
 
     For simple second-order systems, the natural frequency is given by 
-    <img src="/Project/img/math_nat_freq.PNG" alt="math" style="height: 400px;"/> 
+    <img src="/Project/img/math_nat_freq.PNG" alt="math" style="height: 100px;"/> 
 
     The mass of a rigid body is a function of its density and dimensions. Increasing the part dimensions, $x$, would then increase the system's mass and therefore decrease the natural frequency. This system is more complex than a second-order system so this equation does not directly apply to this case, but this relationship can still give insights to expected correlations.  
 
@@ -73,7 +57,7 @@ The objective functions f_i() do not have closed form representations and theref
 
     For a simple thermal system, thermal mass relates incoming thermal energy to temperature change and the relationship between thermal energy and temperature change is
 
-    <img src="/Project/img/math_therm_mass.PNG" alt="math" style="height: 400px;"/> 
+    <img src="/Project/img/math_therm_mass.PNG" alt="math" style="height: 100px;"/> 
 
     It then follows that increasing the part dimensions would increase the mass which would then increase the amount of energy needed to cause a change in temperature, thus reducing the total gain in temperature over a fixed time period. 
 
